@@ -11,7 +11,6 @@
   <header class="nav">
     <div class="container nav-inner">
       <a class="brand" href="#top">
-        <!-- Use the transparent logo for best look -->
         <img src="images/logo.png" alt="Kailash Associates Logo" class="brand-logo" />
         <div class="brand-text">
           <div class="brand-name">Kailash Associates</div>
@@ -22,6 +21,7 @@
       <nav class="nav-links">
         <a href="#about">About</a>
         <a href="#services">Services</a>
+        <a href="#experts">Experts</a>
         <a href="#contact" class="btn btn-small">Contact</a>
       </nav>
     </div>
@@ -83,7 +83,9 @@
       <div class="container">
         <h2>About</h2>
         <p class="lead">
-          Since 1997, Kailash Associates has been helping people find their perfect home across Delhi-NCR. With decades of experience, we guide clients through buying, selling, renting, and investing in property with transparency, speed, and honest advice.
+          Since 1997, Kailash Associates has been helping people find their perfect home across Delhi-NCR.
+          With decades of experience, we guide clients through buying, selling, renting, and investing in property
+          with transparency, speed, and honest advice.
         </p>
       </div>
     </section>
@@ -123,6 +125,32 @@
       </div>
     </section>
 
+    <!-- EXPERTS (2 PEOPLE) -->
+    <section id="experts" class="section">
+      <div class="container">
+        <h2>Meet our experts</h2>
+        <p class="lead">Two dedicated points of contact to help you with buying, selling, rentals, and investment decisions.</p>
+
+        <div class="experts-grid">
+          <div class="card expert">
+            <div class="expert-img">RC</div>
+            <div>
+              <p class="expert-name">Rahul Chawla</p>
+              <p class="expert-role">Founder • Sales • Deals & Negotiation</p>
+            </div>
+          </div>
+
+          <div class="card expert">
+            <div class="expert-img">KA</div>
+            <div>
+              <p class="expert-name">Kailash Associates Team</p>
+              <p class="expert-role">Rentals • Site Visits • Client Support</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="contact" class="section">
       <div class="container">
         <h2>Contact</h2>
@@ -141,7 +169,7 @@
               <strong>Instagram:</strong> <a href="https://instagram.com/kailashassociates" target="_blank" rel="noopener">@kailashassociates</a>
             </p>
 
-            <div class="contact-actions">
+            <div class="contact-actions" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px;">
               <a class="btn" href="https://wa.me/919289933609" target="_blank" rel="noopener">WhatsApp</a>
               <a class="btn btn-ghost" href="mailto:rahulchwl@yahoo.com">Email</a>
             </div>
@@ -188,7 +216,6 @@
         const phone = document.getElementById("wa_phone").value.trim();
         const message = document.getElementById("wa_message").value.trim();
 
-        // Removed "Source: Website"
         const text =
           `New Enquiry - Kailash Associates\n\n` +
           `Name: ${name}\n` +
