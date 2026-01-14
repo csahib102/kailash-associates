@@ -10,10 +10,13 @@
 <body>
   <header class="nav">
     <div class="container nav-inner">
-      <a class="brand" href="#top" aria-label="Kailash Associates home">
-        <!-- Use the transparent logo in the navbar for a cleaner look -->
+      <a class="brand" href="#top">
+        <!-- Use the transparent logo for best look -->
         <img src="images/logo.png" alt="Kailash Associates Logo" class="brand-logo" />
-        <span class="brand-name">Kailash Associates</span>
+        <div class="brand-text">
+          <div class="brand-name">Kailash Associates</div>
+          <div class="brand-tagline">The Real Estate People</div>
+        </div>
       </a>
 
       <nav class="nav-links">
@@ -32,7 +35,6 @@
           <p class="sub">
             Kailash Associates — led by <strong>Rahul Chawla</strong>. Buying • Selling • Rentals • Investment Advisory.
           </p>
-
           <div class="hero-cta">
             <a class="btn" href="https://wa.me/919810256100" target="_blank" rel="noopener">WhatsApp Now</a>
             <a class="btn btn-ghost" href="#services">View Services</a>
@@ -59,15 +61,14 @@
             <h2>Get a callback</h2>
             <p class="muted">Send your details and we’ll contact you.</p>
 
-            <!-- WhatsApp Form -->
             <form id="whatsappForm">
-              <label for="wa_name">Name</label>
+              <label>Name</label>
               <input id="wa_name" name="name" type="text" placeholder="Your name" required />
 
-              <label for="wa_phone">Phone</label>
+              <label>Phone</label>
               <input id="wa_phone" name="phone" type="text" placeholder="+91 ..." required />
 
-              <label for="wa_message">Message</label>
+              <label>Message</label>
               <textarea id="wa_message" name="message" rows="4" placeholder="Buying / Selling / Rentals / Investment"></textarea>
 
               <button class="btn btn-full" type="submit">Send on WhatsApp</button>
@@ -76,18 +77,13 @@
           </div>
         </div>
       </div>
-
-      <!-- Scroll hint (Apple-style): subtle logo icon + animation -->
-      <a class="scroll-indicator" href="#about" aria-label="Scroll to About">
-        <img src="images/logo.png" alt="" />
-      </a>
     </section>
 
     <section id="about" class="section">
       <div class="container">
         <h2>About</h2>
         <p class="lead">
-          Kailash Associates helps clients buy, sell, rent, and invest in property with transparency, speed, and honest guidance.
+          Since 1997, Kailash Associates has been helping people find their perfect home across Delhi-NCR. With decades of experience, we guide clients through buying, selling, renting, and investing in property with transparency, speed, and honest advice.
         </p>
       </div>
     </section>
@@ -95,7 +91,6 @@
     <section id="services" class="section section-alt">
       <div class="container">
         <h2>Services</h2>
-
         <div class="grid">
           <div class="card">
             <h3>Buying Assistance</h3>
@@ -140,7 +135,6 @@
               Old Rajinder Nagar, Rajinder Nagar,<br />
               New Delhi, Delhi 110060, India
             </p>
-
             <p>
               <strong>Phone:</strong> <a href="tel:+919810256100">+91 98102 56100</a><br />
               <strong>Email:</strong> <a href="mailto:rahulchwl@yahoo.com">rahulchwl@yahoo.com</a><br />
@@ -167,12 +161,7 @@
 
     <footer class="footer">
       <div class="container footer-inner">
-        <div class="footer-brand">
-          <!-- Use the full logo with background in the footer -->
-          <img src="images/logo.jpeg" alt="Kailash Associates" class="footer-logo" />
-          <div>© <span id="year"></span> Kailash Associates. All rights reserved.</div>
-        </div>
-
+        <div>© <span id="year"></span> Kailash Associates. All rights reserved.</div>
         <div class="footer-links">
           <a href="#top">Top</a>
           <a href="https://instagram.com/kailashassociates" target="_blank" rel="noopener">Instagram</a>
@@ -186,13 +175,11 @@
   </main>
 
   <script>
-    // Footer year
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    // WhatsApp form submit (REMOVED the "Source: Website" line)
     const whatsappNumber = "919810256100"; // no plus sign
-
     const form = document.getElementById("whatsappForm");
+
     if (form) {
       form.addEventListener("submit", function (e) {
         e.preventDefault();
@@ -201,6 +188,7 @@
         const phone = document.getElementById("wa_phone").value.trim();
         const message = document.getElementById("wa_message").value.trim();
 
+        // Removed "Source: Website"
         const text =
           `New Enquiry - Kailash Associates\n\n` +
           `Name: ${name}\n` +
