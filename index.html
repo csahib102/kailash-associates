@@ -55,15 +55,20 @@
           <div class="hero-card-inner">
             <h2>Get a callback</h2>
             <p class="muted">Send your details and we’ll contact you.</p>
-            <form action="mailto:rahulchwl@yahoo.com" method="post" enctype="text/plain">
+
+            <!-- WhatsApp Form -->
+            <form id="whatsappForm">
               <label>Name</label>
-              <input name="name" type="text" placeholder="Your name" required />
+              <input id="wa_name" name="name" type="text" placeholder="Your name" required />
+
               <label>Phone</label>
-              <input name="phone" type="text" placeholder="+91 ..." required />
+              <input id="wa_phone" name="phone" type="text" placeholder="+91 ..." required />
+
               <label>Message</label>
-              <textarea name="message" rows="4" placeholder="Buying / Selling / Rentals / Investment"></textarea>
-              <button class="btn btn-full" type="submit">Send</button>
-              <p class="tiny">This opens your email app to send the message.</p>
+              <textarea id="wa_message" name="message" rows="4" placeholder="Buying / Selling / Rentals / Investment"></textarea>
+
+              <button class="btn btn-full" type="submit">Send on WhatsApp</button>
+              <p class="tiny">This will open WhatsApp with your message pre-filled.</p>
             </form>
           </div>
         </div>
@@ -89,7 +94,7 @@
           </div>
           <div class="card">
             <h3>Selling Support</h3>
-            <p>Pricing strategy, marketing support, buyer screening, and deal closing.</p>
+            <p>Pricing strategy, marketing support, buyer screening, and deal closing support.</p>
           </div>
           <div class="card">
             <h3>Rentals & Leasing</h3>
@@ -166,7 +171,30 @@
   </main>
 
   <script>
+    // Footer year
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    // WhatsApp form submit
+    const whatsappNumber = "919810256100"; // no plus sign
+
+    const form = document.getElementById("whatsappForm");
+    if (form) {
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const name = document.getElementById("wa_name").value.trim();
+        const phone = document.getElementById("wa_phone").value.trim();
+        const message = document.getElementById("wa_message").value.trim();
+
+        const text =
+          `New Enquiry - Kailash Associates\n\n` +
+          `Name: ${name}\n` +
+          `Phone: ${phone}\n` +
+          `Message: ${message || "Not provided"}\n\n` +;
+        const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`;
+        window.open(url, "_blank");
+      });
+    }
   </script>
 </body>
 </html>
