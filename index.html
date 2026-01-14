@@ -190,7 +190,7 @@
           `New Enquiry - Kailash Associates\n\n` +
           `Name: ${name}\n` +
           `Phone: ${phone}\n` +
-          `Message: ${message || "Not provided"}\n\n` +;
+          `Message: ${message || "Not provided"}`;
         const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`;
         window.open(url, "_blank");
       });
